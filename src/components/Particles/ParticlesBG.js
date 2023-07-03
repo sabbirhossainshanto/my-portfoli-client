@@ -1,5 +1,84 @@
 const ParticlesBG = {
     autoPlay: true,
+    // background: {
+    //     color: {
+    //         value: "#000",
+    //     },
+    // },
+    // fpsLimit: 120,
+    // interactivity: {
+    //     events: {
+    //         onClick: {
+    //             enable: true,
+    //             mode: "push",
+    //         },
+    //         onHover: {
+    //             enable: true,
+    //             mode: "repulse",
+    //         },
+    //         resize: true,
+    //     },
+    //     modes: {
+    //         push: {
+    //             quantity: 4,
+    //         },
+    //         repulse: {
+    //             distance: 200,
+    //             duration: 0.4,
+    //         },
+    //     },
+    // },
+    // particles: {
+    //     color: {
+    //         value: "#ffffff",
+    //     },
+    //     links: {
+    //         color: "#ffffff",
+    //         distance: 150,
+    //         enable: true,
+    //         opacity: 0.5,
+    //         width: 1,
+    //     },
+    //     collisions: {
+    //         enable: true,
+    //     },
+    //     move: {
+    //         direction: "none",
+    //         enable: true,
+    //         outModes: {
+    //             default: "bounce",
+    //         },
+    //         random: false,
+    //         speed: 6,
+    //         straight: false,
+    //     },
+    //     number: {
+    //         density: {
+    //             enable: true,
+    //             area: 800,
+    //         },
+    //         value: 80,
+    //     },
+    //     opacity: {
+    //         value: 0.5,
+    //     },
+    //     shape: {
+    //         type: "circle",
+    //     },
+    //     size: {
+    //         value: { min: 1, max: 5 },
+    //     },
+    // },
+    // detectRetina: true,
+
+
+
+
+
+
+
+
+
     background: {
         color: {
             value: "#000"
@@ -44,11 +123,11 @@ const ParticlesBG = {
             },
             onHover: {
                 enable: true,
-                mode: "trail",
+                mode: "repulse",
                 parallax: {
                     enable: false,
                     force: 2,
-                    smooth: 10
+                    smooth: 40
                 }
             },
             resize: {
@@ -129,7 +208,7 @@ const ParticlesBG = {
                 quantity: 5,
                 particles: {
                     color: {
-                        value: "#ff0000",
+                        value: "#39181b",
                         animation: {
                             enable: true,
                             speed: 400,
@@ -229,7 +308,7 @@ const ParticlesBG = {
             }
         },
         color: {
-            value: "#ff0000",
+            value: "#e64292",
             animation: {
                 h: {
                     count: 0,
@@ -312,7 +391,7 @@ const ParticlesBG = {
             },
             random: false,
             size: false,
-            speed: 2,
+            speed: 1,
             spin: {
                 acceleration: 0,
                 enable: false
@@ -333,11 +412,11 @@ const ParticlesBG = {
                 height: 1080
             },
             limit: 0,
-            value: 400
+            value: 500
         },
         opacity: {
             random: {
-                enable: true,
+                enable: false,
                 minimumValue: 0.3
             },
             value: {
@@ -352,7 +431,7 @@ const ParticlesBG = {
                 delay: 0,
                 sync: false,
                 mode: "auto",
-                startValue: "random",
+                startValue: "",
                 destroy: "none",
                 minimumValue: 0.3
             }
@@ -377,12 +456,12 @@ const ParticlesBG = {
         },
         size: {
             random: {
-                enable: true,
+                enable: false,
                 minimumValue: 1
             },
             value: {
-                min: 1,
-                max: 3
+                min: 4,
+                max: 4
             },
             animation: {
                 count: 0,
@@ -392,13 +471,13 @@ const ParticlesBG = {
                 delay: 0,
                 sync: false,
                 mode: "auto",
-                startValue: "random",
+                startValue: "",
                 destroy: "none",
                 minimumValue: 1
             }
         },
         stroke: {
-            width: 0
+            width: 1
         },
         zIndex: {
             random: {
@@ -441,7 +520,7 @@ const ParticlesBG = {
                 decay: 0,
                 sync: false
             },
-            direction: "clockwise",
+            direction: "none",
             path: false
         },
         destroy: {
@@ -541,7 +620,7 @@ const ParticlesBG = {
         links: {
             blink: false,
             color: {
-                value: "random"
+                value: "#3c2d7d"
             },
             consent: false,
             distance: 100,
@@ -583,6 +662,7 @@ const ParticlesBG = {
     themes: [],
     zLayers: 100,
     emitters: []
+    
 }
 
 export default ParticlesBG;

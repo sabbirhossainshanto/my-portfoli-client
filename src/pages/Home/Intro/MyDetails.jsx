@@ -1,14 +1,20 @@
 import { TypeAnimation } from "react-type-animation";
 import { FaDownload } from "react-icons/fa";
 import developerBg from "../../../assets/sabbir.png";
-import { Link } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init();
 const MyDetails = () => {
+  const handleDownload = () => {
+    const url = "/public/resume.pdf";
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = "./resume.pdf";
+    anchor.click();
+  };
   return (
     <div>
-      <Link to="https://drive.google.com/file/d/1aGYq-fwvLg-bMTYWGjeSjsLQkalRTpnr/view?usp=sharing">
+      <div onClick={handleDownload}>
         <div className="flex justify-end cursor-pointer mb-10 mt-3">
           <div className="rounded-sm border-[1px] border-[#ca41ac] flex items-center justify-between space-x-3 p-1">
             <div className=" animate-pulse bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700 bg-clip-text text-transparent font-bold lg:leading-tight ">
@@ -19,14 +25,9 @@ const MyDetails = () => {
             </div>
           </div>
         </div>
-      </Link>
+      </div>
       <div className="md:flex justify-center items-center ">
-        <div
-          
-        
-        
-          className="md:w-1/2"
-        >
+        <div className="md:w-1/2">
           <h1 className="text-3xl text-white font-medium">
             Hi, i`m <br />
           </h1>
@@ -56,7 +57,7 @@ const MyDetails = () => {
             creating responsive user interfaces and building RESTful APIs.
           </h1>
         </div>
-        <div  className="md:w-1/2">
+        <div className="md:w-1/2">
           <img src={developerBg} alt="Sabbir Developer" />
         </div>
       </div>
