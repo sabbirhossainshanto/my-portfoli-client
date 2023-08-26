@@ -1,9 +1,10 @@
 import { TypeAnimation } from "react-type-animation";
-import { FaDownload } from "react-icons/fa";
-import developerBg from "../../../assets/sabbir.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
+import developerBg from "../../../../public/animation_llrk2q3o.json";
+import Lottie from "lottie-react";
+import { AiFillGithub, AiOutlineMessage } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
+import { BiLogoLinkedin } from "react-icons/bi";
+
 const MyDetails = () => {
   const handleDownload = () => {
     const url = "/public/resume.pdf";
@@ -13,52 +14,72 @@ const MyDetails = () => {
     anchor.click();
   };
   return (
-    <div>
-      <div onClick={handleDownload}>
-        <div className="flex justify-end cursor-pointer mb-10 mt-3">
-          <div className="rounded-sm border-[1px] border-[#ca41ac] flex items-center justify-between space-x-3 p-1">
-            <div className=" animate-pulse bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700 bg-clip-text text-transparent font-bold lg:leading-tight ">
-              Download Resume
-            </div>
-            <div className="text-rose-500 animate-bounce">
-              <FaDownload />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="md:flex justify-center items-center ">
+    <div className="mt-10 h-full">
+      <div className="md:flex justify-center items-center">
         <div className="md:w-1/2">
-          <h1 className="text-3xl text-white font-medium">
-            Hi, i`m <br />
-          </h1>
-          <h1 className="animate-text bg-gradient-to-r from-[#7a48cd] via-[#ca41ac] to-[#f75051] bg-clip-text text-transparent font-bold text-2xl  lg:leading-tight sm:text-4xl lg:text-6xl lg:max-w-3xl">
-            Sabbir Hossain
+          <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-[#fff]">
+            Sabbir Hossain Shanto
           </h1>
           <TypeAnimation
             sequence={[
               "Specialized in React.js",
               1000,
-              "MERN Stack Web Developer",
-              1000,
-              "Mern Stack Developer",
+              "MERN Stack  Developer",
               1000,
             ]}
             wrapper="span"
             cursor={true}
             repeat={Infinity}
-            style={{ fontSize: "2em", display: "inline-block" }}
-            className="text-gray-200 font-bold"
+            style={{ fontSize: "30px", display: "inline-block" }}
+            className="text-[#e3405f] font-bold"
           />
 
-          <h1 className="text-gray-300 text-xl mt-8 font-medium">
+          <h1 className="text-gray-400 text-xl mt-8 font-medium leading-8">
             Self-taught programmer with proficiency in MERN stack, solid
             understanding of JavaScript, HTML and CSS. Committed to continuous
             learning and staying updated with industry trends. Skilled in
             creating responsive user interfaces and building RESTful APIs.
           </h1>
+          <div className="flex items-center mt-8 gap-4">
+            <a href="https://github.com/sabbirjiinat" target="main">
+              <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                <AiFillGithub color="white" size={20} />
+              </div>
+            </a>
+
+            <a
+              href="https://www.facebook.com/sabbirhossen.santo/"
+              target="main"
+            >
+              <div className=" bg-[#0e76a8] h-10 w-10 flex items-center justify-center rounded-full cursor-pointer">
+                <FaFacebook color="white" size={20} />
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sabbir-hosssain-shanto-bb0a55287/"
+              target="main"
+            >
+              <div className=" bg-[#0e76a8] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                <BiLogoLinkedin color="white" size={20} />
+              </div>
+            </a>
+
+            <a href="mailto:sabbirshnt@gmail.com">
+              <div className=" bg-[#ea4335] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                <AiOutlineMessage color="white" size={20} />
+              </div>
+            </a>
+          </div>
+
+          <div
+            onClick={handleDownload}
+            className="bg-[#fc1056] w-[190px] py-3 rounded mt-8 text-center text-gray-100 font-semibold text-[18px] hover:shadow-xl shadow-red-700 cursor-pointer"
+          >
+            <button>Download Resume</button>
+          </div>
         </div>
         <div className="md:w-1/2">
-          <img src={developerBg} alt="Sabbir Developer" />
+          <Lottie animationData={developerBg} size={100} loop={true} />;
         </div>
       </div>
     </div>

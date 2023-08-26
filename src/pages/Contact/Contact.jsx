@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Container from "../../components/Container/Container";
-import ParticlesBg from "../../components/ParticlesBg";
 import { BsFillTelephoneFill, BsFillSendFill } from "react-icons/bs";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { MdOutlineEmail } from "react-icons/md";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const form = useRef();
@@ -24,8 +24,8 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          toast.success('Your Message Send Successfully')
-          forms.reset()
+          toast.success("Your Message Send Successfully");
+          forms.reset();
         },
         (error) => {
           console.log(error.text);
@@ -34,8 +34,11 @@ const Contact = () => {
   };
   return (
     <Container>
+      <Helmet>
+        <title>Sabbir Portfolio - Contact</title>
+      </Helmet>
       <div>
-        <ParticlesBg />
+       
         <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-4xl lg:text-5xl lg:max-w-3xl text-center text-gray-100 w-fit mx-auto">
           Contact{" "}
           <span className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700">
@@ -105,22 +108,20 @@ const Contact = () => {
                 placeholder="Message"
               ></textarea>
               <button type="submit">
-              <div className="border-2 border-rose-600 w-fit py-2 px-7 rounded-2xl text-2xl flex justify-center items-center space-x-4 hover:bg-gradient-to-r from-indigo-500 to-rose-500 hover:text-gray-100 group transition duration-300 ease-in-out ">
-                <input
-                  type="submit"
-                  value="Send Message"
-                  className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-500 to-rose-500 font-medium group-hover:text-gray-100 transition duration-300 ease-in-out cursor-pointer"
-                  
-                />
-              <BsFillSendFill className="h-5 text-gray-200" />
-               
-              </div>
-             </button>
+                <div className="border-2 border-rose-600 w-fit py-2 px-7 rounded-2xl text-2xl flex justify-center items-center space-x-4 hover:bg-gradient-to-r from-indigo-500 to-rose-500 hover:text-gray-100 group transition duration-300 ease-in-out ">
+                  <input
+                    type="submit"
+                    value="Send Message"
+                    className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-500 to-rose-500 font-medium group-hover:text-gray-100 transition duration-300 ease-in-out cursor-pointer"
+                  />
+                  <BsFillSendFill className="h-5 text-gray-200" />
+                </div>
+              </button>
             </form>
           </div>
         </div>
       </div>
-      <Toaster/>
+      <Toaster />
     </Container>
   );
 };

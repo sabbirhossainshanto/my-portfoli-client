@@ -1,5 +1,4 @@
 import Container from "../../components/Container/Container";
-import ParticlesBg from "../../components/ParticlesBg";
 import { CircularProgressBar } from "@tomickigrzegorz/react-circular-progress-bar";
 import htmlImg from "../../assets/html.png";
 import cssImg from "../../assets/css.png";
@@ -11,11 +10,14 @@ import firebaseImg from "../../assets/firebase.png";
 import expressImg from "../../assets/express-js.png";
 import reactAnimation from "../../../public/react.json";
 import Lottie from "lottie-react";
+import { Helmet } from "react-helmet-async";
 
 const Skills = () => {
   return (
     <Container>
-      <ParticlesBg />
+        <Helmet>
+        <title>Sabbir Portfolio - Skills</title>
+      </Helmet>
       <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-4xl lg:text-5xl lg:max-w-3xl text-center text-gray-100 w-fit mx-auto">
         My{" "}
         <span className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700">

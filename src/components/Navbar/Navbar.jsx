@@ -1,72 +1,74 @@
-import { HiOutlineHome } from "react-icons/hi";
-import { FaReact } from "react-icons/fa";
-import { BiSolidUser, BiSolidMessageRounded } from "react-icons/bi";
-import { CgWebsite } from "react-icons/cg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import Container from "../Container/Container";
 
 const Navbar = () => {
+
   return (
-    <div className="flex flex-col justify-evenly h-full fixed">
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          `bg-gray-800 text-white text-xl w-12 h-12 rounded-full flex justify-center items-center hover:bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700 transition-colors duration-500 transform  ${
-            isActive
-              ? "bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700"
-              : ""
-          }`
-        }
-      >
-        <HiOutlineHome />
-      </NavLink>
-      <NavLink
-        to="/about"
-        className={({ isActive }) =>
-          `bg-gray-800 text-white text-xl w-12 h-12 rounded-full flex justify-center items-center hover:bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700 ${
-            isActive
-              ? "bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700"
-              : ""
-          }`
-        }
-      >
-        <BiSolidUser />
-      </NavLink>
-      <NavLink
-        to="/skills"
-        className={({ isActive }) =>
-          `bg-gray-800 text-white text-xl w-12 h-12 rounded-full flex justify-center items-center hover:bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700 ${
-            isActive
-              ? "bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700"
-              : ""
-          }`
-        }
-      >
-        <FaReact />
-      </NavLink>
-      <NavLink
-        to="/portfolio"
-        className={({ isActive }) =>
-          `bg-gray-800 text-white text-xl w-12 h-12 rounded-full flex justify-center items-center hover:bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700 ${
-            isActive
-              ? "bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700"
-              : ""
-          }`
-        }
-      >
-        <CgWebsite />
-      </NavLink>
-      <NavLink
-        to="/contact"
-        className={({ isActive }) =>
-          `bg-gray-800 text-white text-xl w-12 h-12 rounded-full flex justify-center items-center hover:bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700 ${
-            isActive
-              ? "bg-gradient-to-r from-[#7a48cd] via-rose-500 to-rose-700"
-              : ""
-          }`
-        }
-      >
-        <BiSolidMessageRounded />
-      </NavLink>
+    <div>
+      <Container>
+        <div className="hidden 800px:flex items-center justify-between py-8 ">
+          <div className="text-[#fff] font-medium">
+            <Link to="/">
+              <h2>Sabbir</h2>
+            </Link>
+          </div>
+          <div className="flex items-center justify-center space-x-10">
+            <div className="hover:bg-[#2ab0ee] px-3 py-[6px] rounded shadow-[#2ab0ee] hover:shadow-sm transition duration-300">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  ` text-[#fff] font-medium ${isActive ? "" : ""}`
+                }
+              >
+                Home
+              </NavLink>
+            </div>
+
+            <div className="hover:bg-[#f7b908] px-3 py-[6px] rounded shadow-[#f7b908] hover:shadow-sm transition duration-300">
+              <NavLink
+                to="/skills"
+                className={({ isActive }) =>
+                  `text-[#fff] font-medium ${isActive ? "" : ""}`
+                }
+              >
+                Skill
+              </NavLink>
+            </div>
+            <div className="hover:bg-[#e44160] px-3 py-[6px] rounded shadow-[#e44160] hover:shadow-sm transition duration-300">
+              <NavLink
+                to="/portfolio"
+                className={({ isActive }) =>
+                  `text-[#fff] font-medium${isActive ? "" : ""}`
+                }
+              >
+                Project
+              </NavLink>
+            </div>
+            <div className="hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300">
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  ` text-[#fff] font-medium ${isActive ? "" : ""}`
+                }
+              >
+                About
+              </NavLink>
+            </div>
+
+            <div className="hover:bg-[#47a148] px-3 py-[6px] rounded shadow-[#47a148] hover:shadow-sm transition duration-300">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `text-[#fff] font-medium ${isActive ? "" : ""}`
+                }
+              >
+                Contact
+              </NavLink>
+            </div>
+           
+          </div>
+        </div>
+      </Container>
     </div>
   );
 };

@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import Container from "../../components/Container/Container";
-import ParticlesBg from "../../components/ParticlesBg";
 import Lottie from "lottie-react";
 import developerComputer from "../../../public/programming-computer.json";
+import { Helmet } from "react-helmet-async";
 
 
 const About = () => {
   return (
     <Container>
-    <ParticlesBg />
+        <Helmet>
+        <title>Sabbir Portfolio - About</title>
+      </Helmet>
+
       <div className="pt-10">
       <h1 className="font-bold text-2xl lg:leading-tight sm:text-4xl lg:text-5xl lg:max-w-3xl text-center text-gray-100">
         About{" "}
