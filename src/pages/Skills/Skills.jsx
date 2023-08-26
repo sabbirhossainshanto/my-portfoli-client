@@ -1,272 +1,162 @@
 import Container from "../../components/Container/Container";
-import { CircularProgressBar } from "@tomickigrzegorz/react-circular-progress-bar";
-import htmlImg from "../../assets/html.png";
-import cssImg from "../../assets/css.png";
-import jsImg from "../../assets/java-script.png";
-import tailwindImg from "../../assets/tailwind.png";
-import bootstrapImg from "../../assets/bootstrap.png";
-import mongodbImg from "../../assets/mongodb.svg";
-import firebaseImg from "../../assets/firebase.png";
-import expressImg from "../../assets/express-js.png";
-import reactAnimation from "../../../public/react.json";
-import Lottie from "lottie-react";
 import { Helmet } from "react-helmet-async";
-
+import skillBg from "../../../public/animation_llrrs5iy.json";
+import Lottie from "lottie-react";
+import { useState } from "react";
+import html from "../../assets/html.png";
+import css from "../../assets/css.png";
+import JavaScript from "../../assets/java-script.png";
+import react from "../../assets/react.png";
+import MongoDb from "../../assets/mongodb.svg";
+import Express from "../../assets/express-js.png";
+import node from "../../assets/node.svg";
+import { BiLogoTailwindCss } from "react-icons/bi";
+import { SiFirebase,SiRedux } from "react-icons/si";  
+import { ImNpm } from "react-icons/im";  
+import BootStrap from '../../assets/bootstrap.png'
 const Skills = () => {
+  const [hover, setHover] = useState(0);
   return (
-    <Container>
+    <div className="w-full h-full mt-16">
+      <Container>
         <Helmet>
-        <title>Sabbir Portfolio - Skills</title>
-      </Helmet>
-      <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-4xl lg:text-5xl lg:max-w-3xl text-center text-gray-100 w-fit mx-auto">
-        My{" "}
-        <span className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700">
-          Skills
-        </span>
-      </h1>
-      <div className="bg-gray-900 px-2 py-1 rounded-md w-fit mx-auto mt-3 mb-5">
-        <h2 className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700 font-medium text-xl ">
-          I Develop Skills Regularly
-        </h2>
-      </div>
+          <title>Sabbir Portfolio - Skills</title>
+        </Helmet>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-7">
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={85}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <img
-              title="HTML"
-              alt="Html"
-              src={htmlImg}
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "2px",
-                position: "absolute",
-                top: "50%",
-                transform: "translate(-50%, -90%)",
-                width: "70px",
-              }}
-            />
-          </CircularProgressBar>
+        <div className="800px:flex justify-between items-start w-full gap-4 sm:gap-6 md:gap-10 lg:gap-16 xl:gap-20">
+          <div className="w-full 800px:w-[50vw] ">
+            <Lottie animationData={skillBg} size={100} loop={true} />;
+          </div>
+          <div className="w-full 800px:w-[50vw] ">
+            <div className="w-full text-center">
+              <h1 className="text-3xl font-Roboto text-white font-semibold">
+                Full Stack Development
+              </h1>
+            </div>
+
+            <div className="grid grid-cols-5 mt-10 gap-5">
+              <div className="relative" onMouseEnter={() => setHover(1)}>
+                <img className="cursor-pointer" src={html} alt="" />
+                {hover === 1 && (
+                  <p className="absolute -top-5 left-4 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    Html5
+                  </p>
+                )}
+              </div>
+
+              <div className="relative" onMouseEnter={() => setHover(2)}>
+                <img className=" cursor-pointer" src={css} alt="" />
+                {hover === 2 && (
+                  <p className="absolute -top-5 left-5 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    Css3
+                  </p>
+                )}
+              </div>
+
+              <div className="relative" onMouseEnter={() => setHover(3)}>
+                <img className=" cursor-pointer" src={JavaScript} alt="" />
+                {hover === 3 && (
+                  <p className="absolute -top-5 left-1 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    JavaScript
+                  </p>
+                )}
+              </div>
+
+              <div className="relative" onMouseEnter={() => setHover(4)}>
+                <img className=" cursor-pointer" src={react} alt="" />
+                {hover === 4 && (
+                  <p className="absolute -top-5 left-5 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    React
+                  </p>
+                )}
+              </div>
+
+              <div className="relative" onMouseEnter={() => setHover(5)}>
+                <img className=" cursor-pointer" src={MongoDb} alt="" />
+                {hover === 5 && (
+                  <p className="absolute -top-7 left-1 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    MongoDb
+                  </p>
+                )}
+              </div>
+              <div className="relative mt-2" onMouseEnter={() => setHover(6)}>
+                <img className=" cursor-pointer" src={Express} alt="" />
+                {hover === 6 && (
+                  <p className="absolute -top-7 left-1 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    Express
+                  </p>
+                )}
+              </div>
+              <div className="relative mt-2" onMouseEnter={() => setHover(7)}>
+                <BiLogoTailwindCss
+                  size={60}
+                  color="#38bdf8"
+                  className="cursor-pointer"
+                />
+                {hover === 7 && (
+                  <p className="absolute -top-7 left-0 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    Tailwind
+                  </p>
+                )}
+              </div>
+              <div className="relative mt-2" onMouseEnter={() => setHover(8)}>
+                <img className=" cursor-pointer" src={node} alt="" />
+                {hover === 8 && (
+                  <p className="absolute -top-7 left-2 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    Node.js
+                  </p>
+                )}
+              </div>
+              <div className="relative mt-2" onMouseEnter={() => setHover(9)}>
+              <SiFirebase
+              size={50}
+              color="#ffcc2f"
+              className="cursor-pointer"
+              />
+                {hover === 9 && (
+                  <p className="absolute -top-7 -left-3 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                    Firebase
+                  </p>
+                )}
+              </div>
+              <div className="relative mt-2" onMouseEnter={() => setHover(10)}>
+              <SiRedux
+              size={50}
+              color="#764abc"
+              className="cursor-pointer"
+              />
+                {hover === 10 && (
+                  <p className="absolute -top-7 -left-1 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                  Redux
+                  </p>
+                )}
+              </div>
+              <div className="relative mt-2" onMouseEnter={() => setHover(11)}>
+              <img className=" cursor-pointer" src={BootStrap} alt="" />
+                {hover === 11 && (
+                  <p className="absolute -top-5 -left-1 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                  BootStrap
+                  </p>
+                )}
+              </div>
+              <div className="relative mt-2" onMouseEnter={() => setHover(12)}>
+              <ImNpm
+              size={50}
+              color="#cb3837"
+              className="cursor-pointer"
+              />
+                {hover === 12 && (
+                  <p className="absolute -top-7 left-1 bg-white text-gray-900 px-1 rounded-md font-Roboto font-semibold">
+                  NPM
+                  </p>
+                )}
+              </div>
+
+            </div>
+          </div>
         </div>
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={75}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <img
-              title="CSS"
-              alt="CSS"
-              src={cssImg}
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "2px",
-                position: "absolute",
-                top: "50%",
-                transform: "translate(-50%, -90%)",
-                width: "70px",
-              }}
-            />
-          </CircularProgressBar>
-        </div>
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={70}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <img
-              title="JS"
-              alt="JS"
-              src={jsImg}
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "2px",
-                position: "absolute",
-                top: "50%",
-                transform: "translate(-50%, -90%)",
-                width: "70px",
-              }}
-            />
-          </CircularProgressBar>
-        </div>
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={80}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <Lottie
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "5px",
-                position: "absolute",
-                top: "60%",
-                transform: "translate(-50%, -80%)",
-                width: "70px",
-              }}
-              animationData={reactAnimation}
-              loop={true}
-            />
-            ;
-          </CircularProgressBar>
-        </div>
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={80}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <img
-              title="Tailwind"
-              alt="Tailwind"
-              src={tailwindImg}
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "5px",
-                position: "absolute",
-                top: "50%",
-                transform: "translate(-50%, -80%)",
-                width: "70px",
-              }}
-            />
-          </CircularProgressBar>
-        </div>
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={70}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <img
-              title="BootsTarp"
-              alt="BootsTrap"
-              src={bootstrapImg}
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "5px",
-                position: "absolute",
-                top: "50%",
-                transform: "translate(-50%, -80%)",
-                width: "70px",
-              }}
-            />
-          </CircularProgressBar>
-        </div>
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={70}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <img
-              title="MongoDB"
-              alt="MongoDB"
-              src={mongodbImg}
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "5px",
-                position: "absolute",
-                top: "50%",
-                transform: "translate(-50%, -80%)",
-                width: "70px",
-              }}
-            />
-          </CircularProgressBar>
-        </div>
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={65}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <img
-              title="Firebase"
-              alt="Firebase"
-              src={firebaseImg}
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "5px",
-                position: "absolute",
-                top: "50%",
-                transform: "translate(-50%, -80%)",
-                width: "70px",
-              }}
-            />
-          </CircularProgressBar>
-        </div>
-        <div className="relative w-fit mx-auto">
-          <CircularProgressBar
-            fontColor="#ffff"
-            colorCircle="#e6e6e6"
-            linearGradient={["#7a48cd", "#f75051"]}
-            percent={70}
-            textPosition="1.5em"
-            fontSize="1em"
-            round
-          >
-            <img
-              title="Express-Js"
-              alt="Express-Js"
-              src={expressImg}
-              style={{
-                borderRadius: "50%",
-                left: "50%",
-                padding: "5px",
-                position: "absolute",
-                top: "50%",
-                transform: "translate(-50%, -80%)",
-                width: "70px",
-              }}
-            />
-          </CircularProgressBar>
-        </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

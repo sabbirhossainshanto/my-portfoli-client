@@ -1,6 +1,5 @@
 import MyDetails from "./MyDetails";
 
-
 const Intro = () => {
   return (
     <div>

@@ -5,6 +5,7 @@ import { AiFillGithub, AiOutlineMessage } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import { BiLogoLinkedin } from "react-icons/bi";
 
+
 const MyDetails = () => {
   const handleDownload = () => {
     const url = "/public/resume.pdf";
@@ -82,6 +83,7 @@ const MyDetails = () => {
           <Lottie animationData={developerBg} size={100} loop={true} />;
         </div>
       </div>
+    
     </div>
   );
 };
