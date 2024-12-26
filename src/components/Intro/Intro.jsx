@@ -1,14 +1,17 @@
 import { TypeAnimation } from "react-type-animation";
-import developerBg from "../../../../public/animation_llrk2q3o.json";
+import developerBg from "../../../public/developer.json";
 import Lottie from "lottie-react";
 import { AiFillGithub, AiOutlineMessage } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import { BiLogoLinkedin } from "react-icons/bi";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
-const MyDetails = () => {
+const Intro = () => {
   const handleDownload = () => {
-    const url = "/public/resume.pdf";
+    const url = "/resume.pdf";
     const anchor = document.createElement("a");
     anchor.href = url;
     anchor.download = "./resume.pdf";
@@ -17,15 +20,17 @@ const MyDetails = () => {
   return (
     <div className="mt-10 h-full">
       <div className="md:flex justify-center items-center">
-        <div className="md:w-1/2">
+        <div data-aos="fade-up" data-aos-duration="2000" className="md:w-1/2">
           <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-[#fff]">
             Sabbir Hossain Shanto
           </h1>
           <TypeAnimation
             sequence={[
-              "Specialized in React.js",
+              "MERN Stack Developer",
               1000,
-              "MERN Stack  Developer",
+              "Full Stack Developer",
+              1000,
+              "Specialized in React.js",
               1000,
             ]}
             wrapper="span"
@@ -36,13 +41,14 @@ const MyDetails = () => {
           />
 
           <h1 className="text-gray-400 text-xl mt-8 font-medium leading-8">
-            Self-taught programmer with proficiency in MERN stack, solid
-            understanding of JavaScript, HTML and CSS. Committed to continuous
-            learning and staying updated with industry trends. Skilled in
-            creating responsive user interfaces and building RESTful APIs.
+            Self-taught programmer with proficiency in Full Stack Development,
+            solid understanding of JavaScript, HTML, CSS, React, Redux, Next-JS,
+            Express, MongoDB and PostgreSQL. Committed to continuous learning
+            and staying updated with industry trends. Skilled in creating
+            responsive user interfaces and building RESTful APIs.
           </h1>
           <div className="flex items-center mt-8 gap-4">
-            <a href="https://github.com/sabbirjiinat" target="main">
+            <a href="https://github.com/sabbirhossainshanto" target="main">
               <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
                 <AiFillGithub color="white" size={20} />
               </div>
@@ -56,10 +62,7 @@ const MyDetails = () => {
                 <FaFacebook color="white" size={20} />
               </div>
             </a>
-            <a
-              href="https://www.linkedin.com/in/sabbir-hosssain-shanto-bb0a55287/"
-              target="main"
-            >
+            <a href="https://www.linkedin.com/in/sabbirshanto/" target="main">
               <div className=" bg-[#0e76a8] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
                 <BiLogoLinkedin color="white" size={20} />
               </div>
@@ -79,13 +82,12 @@ const MyDetails = () => {
             <button>Download Resume</button>
           </div>
         </div>
-        <div className="md:w-1/2">
+        <div data-aos="fade-up" data-aos-duration="2000" className="md:w-1/2">
           <Lottie animationData={developerBg} size={100} loop={true} />;
         </div>
       </div>
-    
     </div>
   );
 };
 
-export default MyDetails;
+export default Intro;

@@ -37,9 +37,12 @@ const Contact = () => {
       <Helmet>
         <title>Sabbir Portfolio - Contact</title>
       </Helmet>
+      <div className="w-full 800px:flex items-center justify-between">
+        <div></div>
+        <div></div>
+      </div>
       <div>
-       
-        <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-4xl lg:text-5xl lg:max-w-3xl text-center text-gray-100 w-fit mx-auto">
+        <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-3xl lg:text-4xl  text-center text-gray-100 w-fit mx-auto">
           Contact{" "}
           <span className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700">
             Me
@@ -52,14 +55,18 @@ const Contact = () => {
         </div>
 
         <div className="md:flex justify-center py-10 space-y-12 md:space-y-0">
-          <div className="md:w-1/2 space-y-7">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            className="md:w-1/2 space-y-7"
+          >
             <div className="flex items-center space-x-5  text-white">
               <div className="border border-rose-600 text-rose-600 rounded-full w-10 h-10 flex justify-center items-center">
                 <BsFillTelephoneFill />
               </div>
               <div>
                 <h6 className="text-2xl font-semibold">Contact Me</h6>
-                <p>+8801786869322</p>
+                <p>+8801777051339</p>
               </div>
             </div>
             <div className="flex  items-center space-x-5  text-white">
@@ -83,7 +90,11 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="md:w-1/2">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            className="md:w-1/2"
+          >
             <form className="space-y-7" ref={form} onSubmit={sendEmail}>
               <input
                 className="w-full px-3 py-2 border border-gray-600 rounded-md bg-transparent focus:outline-rose-500  bg-black text-gray-100"
