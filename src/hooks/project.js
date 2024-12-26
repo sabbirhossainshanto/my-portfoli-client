@@ -10,3 +10,12 @@ export const useGetAllProject = () => {
     },
   });
 };
+export const useGetSingleProject = (id) => {
+  return useQuery({
+    queryKey: ["project", id],
+    queryFn: async () => {
+      const { data } = await AxiosSecure.get(`/project/${id}`);
+      return data;
+    },
+  });
+};

@@ -52,7 +52,7 @@ const Portfolio = () => {
                     </span>
                   </p>
                   <div className="flex justify-center items-center gap-4">
-                    <Link to={project?.frontendGithubLink}>
+                    <Link to={`/project-details/${project?._id}`}>
                       {" "}
                       <p className="text-gray-200 text-base border border-rose-600 px-2 rounded-md flex justify-center items-center space-x-2  cursor-pointer bg-gradient-to-r from-indigo-900 to-rose-900">
                         <BsFillEyeFill /> <span>Details</span>
