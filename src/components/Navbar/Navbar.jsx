@@ -72,6 +72,17 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
+                  isActive ? "text-rose-700 hover:text-white" : ""
+                }`
+              }
+            >
+              Blog
+            </NavLink>
+
+            <NavLink
               to="/contact"
               className={({ isActive }) =>
                 `text-[#fff] font-medium hover:bg-[#47a148] px-3 py-[6px] rounded shadow-[#47a148] hover:shadow-sm transition duration-300 ${
@@ -169,6 +180,18 @@ const Navbar = () => {
                     }
                   >
                     Experience
+                  </NavLink>
+                </div>
+                <div onClick={() => setOpen(!open)}>
+                  <NavLink
+                    to="/blog"
+                    className={({ isActive }) =>
+                      ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
+                        isActive ? "text-rose-700 hover:text-white" : ""
+                      }`
+                    }
+                  >
+                    Blog
                   </NavLink>
                 </div>
 

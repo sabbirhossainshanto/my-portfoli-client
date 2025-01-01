@@ -6,6 +6,7 @@ import Portfolio from "../Portfolio/Portfolio";
 // import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Experience from "../Experience/Experience";
+import Blog from "../Blog/Blog";
 
 const Home = () => {
   return (
@@ -26,6 +27,10 @@ const Home = () => {
         <div className="py-10">
           {" "}
           <Experience />
+        </div>
+        <div className="py-10">
+          {" "}
+          <Blog />
         </div>
 
         {/* <div className="py-10">

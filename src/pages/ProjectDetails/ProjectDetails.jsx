@@ -19,59 +19,56 @@ const ProjectDetails = () => {
   } = data?.data || {};
   return (
     <Container>
-      <div className="md:flex items-start justify-between gap-5 pt-10">
-        <img className="md:w-1/2" src={image} alt="" />
-        <div className="md:w-1/2 text-gray-200 text-lg space-y-4">
-          <h1 className="text-2xl font-medium">Title: {title}</h1>
-          <p className="text-xl">
+      <div className="grid grid-cols-12  gap-5 pt-10">
+        <div
+          style={{ backgroundImage: `url(${image})` }}
+          className={` h-[80vh] w-full bg-cover bg-top hover:bg-bottom duration-[5s] rounded-t-md col-span-12 md:col-span-5`}
+        >
+          .
+        </div>
+        {/* <img className="md:w-1/2" src={image} alt="" /> */}
+        <div className="col-span-12 md:col-span-7 text-gray-200 text-lg space-y-4">
+          <h1 className="text-xl md:text-2xl font-medium">Title: {title}</h1>
+          <p className="text-base md:text-xl">
             Technologies:{" "}
             {technologies?.map((t, idx) => {
               return <span key={idx}>{t}</span>;
             })}
           </p>
-          <p className="text-xl">Type: {type}</p>
-          <div className="flex gap-4">
-            <span> Frontend Live :</span>
+          <p className="text-base md:text-xl">Type: {type}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-base md:text-xl">
             <Link
-              className="text-green-600"
+              className="text-green-600 underline"
               target="_blank"
               to={frontendLiveLink}
             >
-              {frontendLiveLink}
+              Frontend Live Link
             </Link>
-          </div>
-          <div className="flex gap-4">
-            <span> Frontend Github :</span>
             <Link
-              className="text-green-600"
+              className="text-green-600 underline"
               target="_blank"
               to={frontendGithubLink}
             >
-              {frontendGithubLink}
+              Frontend Github Link
             </Link>
-          </div>
-          <div className="flex gap-4">
-            <span> Backend Live :</span>
             <Link
-              className="text-green-600"
+              className="text-green-600 underline"
               target="_blank"
               to={backendLiveLink}
             >
-              {backendGithubLink}
+              Backend Github Link
             </Link>
-          </div>
-          <div className="flex items-center gap-4">
-            <span> Backend Github :</span>
             <Link
-              className="text-green-600"
+              className="text-green-600 underline"
               target="_blank"
               to={backendGithubLink}
             >
-              {backendGithubLink}
+              Backend Live Link
             </Link>
           </div>
-          <p className="mt-3">Overview: {overview}</p>
-          <p className="mt-3">Details: {details}</p>
+
+          <p className="mt-3 text-base md:text-xl">Overview: {overview}</p>
+          <p className="mt-3 text-base md:text-xl">Details: {details}</p>
         </div>
       </div>
     </Container>

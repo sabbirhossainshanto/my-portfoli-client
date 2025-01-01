@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const AxiosSecure = axios.create({
-  baseURL: "http://localhost:3000/api/v1",
-  // baseURL: "https://portfolio-server-sabbir.vercel.app/api/v1",
+  // baseURL: "http://localhost:3000/api/v1",
+  baseURL: "https://portfolio-server-sabbir.vercel.app/api/v1",
 });
 
 // Add a request interceptor

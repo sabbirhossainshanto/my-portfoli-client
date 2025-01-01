@@ -8,6 +8,8 @@ import Contact from "../pages/Contact/Contact";
 import Home from "../pages/Home/Home";
 import ProjectDetails from "../pages/ProjectDetails/ProjectDetails";
 import Experience from "../pages/Experience/Experience";
+import Blog from "../pages/Blog/Blog";
+import SingleBlog from "../pages/SingleBlog/SingleBlog";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+      {
+        path: "/blog/:blogId",
+        element: <SingleBlog />,
       },
       {
         path: "/experience",
