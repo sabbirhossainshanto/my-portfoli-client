@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Contact from "../pages/Contact/Contact";
 import Home from "../pages/Home/Home";
 import ProjectDetails from "../pages/ProjectDetails/ProjectDetails";
+import Experience from "../pages/Experience/Experience";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/experience",
+        element: <Experience />,
       },
     ],
   },

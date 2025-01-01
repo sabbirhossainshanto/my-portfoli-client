@@ -1,6 +1,4 @@
 import { TypeAnimation } from "react-type-animation";
-import developerBg from "../../../public/developer.json";
-import Lottie from "lottie-react";
 import { AiFillGithub, AiOutlineMessage } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import { BiLogoLinkedin } from "react-icons/bi";
@@ -19,8 +17,8 @@ const Intro = () => {
   };
   return (
     <div className="mt-10 h-full">
-      <div className="md:flex justify-center items-center">
-        <div data-aos="fade-up" data-aos-duration="2000" className="md:w-1/2">
+      <div className="md:flex justify-between items-center">
+        <div data-aos="fade-up" data-aos-duration="2000" className="w-full">
           <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-[#fff]">
             Sabbir Hossain Shanto
           </h1>
@@ -48,12 +46,17 @@ const Intro = () => {
             responsive user interfaces and building RESTful APIs.
           </h1>
           <div className="flex items-center mt-8 gap-4">
-            <a href="https://github.com/sabbirhossainshanto" target="main">
+            <a href="https://wa.me/+8801777051339" target="main">
               <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
-                <AiFillGithub color="white" size={20} />
+                <img src="/src/assets/whatsapp.png" />
               </div>
             </a>
 
+            <a href="https://www.linkedin.com/in/sabbirshanto/" target="main">
+              <div className=" bg-[#0e76a8] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                <BiLogoLinkedin color="white" size={20} />
+              </div>
+            </a>
             <a
               href="https://www.facebook.com/sabbirhossen.santo/"
               target="main"
@@ -62,9 +65,9 @@ const Intro = () => {
                 <FaFacebook color="white" size={20} />
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/sabbirshanto/" target="main">
-              <div className=" bg-[#0e76a8] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
-                <BiLogoLinkedin color="white" size={20} />
+            <a href="https://github.com/sabbirhossainshanto" target="main">
+              <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                <AiFillGithub color="white" size={20} />
               </div>
             </a>
 
@@ -82,8 +85,15 @@ const Intro = () => {
             <button>Download Resume</button>
           </div>
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000" className="md:w-1/2">
-          <Lottie animationData={developerBg} size={100} loop={true} />;
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className="w-full flex items-center justify-center md:justify-end mt-10 md:mt-0"
+        >
+          <img
+            className="h-[70vh] rounded-md"
+            src="https://res.cloudinary.com/daar91zv4/image/upload/v1735366042/Firefly%2020230917192807-1735366041867.png"
+          />
         </div>
       </div>
     </div>

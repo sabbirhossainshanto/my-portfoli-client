@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { AiFillHeart } from "react-icons/ai";
 const Main = () => {
   return (
-    <div className="bg-[#1d1d1d]">
+    <div className="bg-[#000000]">
       <Navbar />
       <div className="min-h-[calc(100vh-155px)]">
         {" "}

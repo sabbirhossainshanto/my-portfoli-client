@@ -8,7 +8,7 @@ import { useGetAllProject } from "../../hooks/project";
 
 const Portfolio = () => {
   const { data } = useGetAllProject();
-  console.log(data);
+
   return (
     <Container>
       <Helmet>

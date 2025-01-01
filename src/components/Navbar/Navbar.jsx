@@ -49,7 +49,7 @@ const Navbar = () => {
               Project
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/about"
               className={({ isActive }) =>
                 ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
@@ -58,6 +58,17 @@ const Navbar = () => {
               }
             >
               About
+            </NavLink> */}
+
+            <NavLink
+              to="/experience"
+              className={({ isActive }) =>
+                ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
+                  isActive ? "text-rose-700 hover:text-white" : ""
+                }`
+              }
+            >
+              Experience
             </NavLink>
 
             <NavLink
@@ -135,7 +146,7 @@ const Navbar = () => {
                     Project
                   </NavLink>
                 </div>
-                <div onClick={() => setOpen(!open)}>
+                {/* <div onClick={() => setOpen(!open)}>
                   <NavLink
                     to="/about"
                     className={({ isActive }) =>
@@ -145,6 +156,19 @@ const Navbar = () => {
                     }
                   >
                     About
+                  </NavLink>
+                </div> */}
+
+                <div onClick={() => setOpen(!open)}>
+                  <NavLink
+                    to="/experience"
+                    className={({ isActive }) =>
+                      ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
+                        isActive ? "text-rose-700 hover:text-white" : ""
+                      }`
+                    }
+                  >
+                    Experience
                   </NavLink>
                 </div>
 

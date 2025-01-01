@@ -6,6 +6,9 @@ import { CiLocationArrow1 } from "react-icons/ci";
 import { MdOutlineEmail } from "react-icons/md";
 import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import { BiLogoLinkedin } from "react-icons/bi";
+import { AiFillGithub, AiOutlineMessage } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
 
 const Contact = () => {
   const form = useRef();
@@ -37,10 +40,7 @@ const Contact = () => {
       <Helmet>
         <title>Sabbir Portfolio - Contact</title>
       </Helmet>
-      <div className="w-full 800px:flex items-center justify-between">
-        <div></div>
-        <div></div>
-      </div>
+
       <div>
         <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-3xl lg:text-4xl  text-center text-gray-100 w-fit mx-auto">
           Contact{" "}
@@ -54,11 +54,55 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="md:flex justify-center py-10 space-y-12 md:space-y-0">
+        <div className="md:flex justify-between py-10 space-y-12 md:space-y-0">
           <div
             data-aos="fade-right"
             data-aos-duration="1000"
-            className="md:w-1/2 space-y-7"
+            className="w-full space-y-7"
+          >
+            <div className="text-xl text-white text-left">
+              You can contact me at the places <br /> mentioned below. I will
+              try to <br />
+              get back to you as fast as I can.
+            </div>
+            <div className="flex items-center mt-8 gap-4">
+              <a href="https://wa.me/+8801777051339" target="main">
+                <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                  <img src="/src/assets/whatsapp.png" />
+                </div>
+              </a>
+
+              <a href="https://www.linkedin.com/in/sabbirshanto/" target="main">
+                <div className=" bg-[#0e76a8] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                  <BiLogoLinkedin color="white" size={20} />
+                </div>
+              </a>
+              <a
+                href="https://www.facebook.com/sabbirhossen.santo/"
+                target="main"
+              >
+                <div className=" bg-[#0e76a8] h-10 w-10 flex items-center justify-center rounded-full cursor-pointer">
+                  <FaFacebook color="white" size={20} />
+                </div>
+              </a>
+              <a href="https://github.com/sabbirhossainshanto" target="main">
+                <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                  <AiFillGithub color="white" size={20} />
+                </div>
+              </a>
+
+              <a href="mailto:sabbirshnt@gmail.com">
+                <div className=" bg-[#ea4335] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
+                  <AiOutlineMessage color="white" size={20} />
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            className="w-full space-y-7"
           >
             <div className="flex items-center space-x-5  text-white">
               <div className="border border-rose-600 text-rose-600 rounded-full w-10 h-10 flex justify-center items-center">
@@ -89,12 +133,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
-          <div
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            className="md:w-1/2"
-          >
+          <div data-aos="fade-left" data-aos-duration="1000" className="w-full">
             <form className="space-y-7" ref={form} onSubmit={sendEmail}>
               <input
                 className="w-full px-3 py-2 border border-gray-600 rounded-md bg-transparent focus:outline-rose-500  bg-black text-gray-100"
