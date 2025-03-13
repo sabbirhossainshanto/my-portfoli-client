@@ -20,7 +20,7 @@ const Blog = () => {
           </span>
         </h1>
 
-        <div className="pt-10 pb-7 grid grid-cols-1 md:grid-cols-2 ">
+        <div className="pt-10 pb-7 grid grid-cols-1 md:grid-cols-2 gap-10">
           {data?.data?.map((blog) => {
             return (
               <div

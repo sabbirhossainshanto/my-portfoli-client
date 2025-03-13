@@ -1,3 +1,5 @@
+import whatsApp from "../../assets/whatsapp.png";
+
 import { TypeAnimation } from "react-type-animation";
 import { AiFillGithub, AiOutlineMessage } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
@@ -48,7 +50,7 @@ const Intro = () => {
           <div className="flex items-center mt-8 gap-4">
             <a href="https://wa.me/+8801777051339" target="main">
               <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
-                <img src="/src/assets/whatsapp.png" />
+                <img src={whatsApp} />
               </div>
             </a>
 

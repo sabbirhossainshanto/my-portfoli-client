@@ -6,6 +6,10 @@ import moment from "moment";
 const Experience = () => {
   const { data } = useGetAllExperience();
 
+  const sortByDate = data?.data?.sort(
+    (a, b) => new Date(b.joinDate) - new Date(a.joinDate)
+  );
+
   return (
     <Container>
       <Helmet>
@@ -19,8 +23,8 @@ const Experience = () => {
           </span>
         </h1>
 
-        <div className="pt-10 pb-7 grid grid-cols-1 ">
-          {data?.data?.map((experience) => {
+        <div className="pt-10 pb-7 grid grid-cols-1 gap-5">
+          {sortByDate?.map((experience) => {
             return (
               <div
                 key={experience?._id}
@@ -46,7 +50,9 @@ const Experience = () => {
                       <div className="flex flex-col md:items-end mt-2 md:mt-0">
                         <h3>
                           {moment(experience?.joinDate).format("MMM YYYY")} -
-                          {moment(experience?.resignDate).format("MMM YYYY")}
+                          {experience?.companyName === "Seven Book"
+                            ? "Present"
+                            : moment(experience?.resignDate).format("MMM YYYY")}
                         </h3>
                         <h3>{experience?.location}</h3>
                       </div>
