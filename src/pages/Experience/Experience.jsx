@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Container from "../../components/Container/Container";
 import { useGetAllExperience } from "../../hooks/experience";
 import moment from "moment";
 
@@ -11,19 +10,19 @@ const Experience = () => {
   );
 
   return (
-    <Container>
+    <>
       <Helmet>
         <title>Sabbir Portfolio - Portfolios</title>
       </Helmet>
       <div data-aos="fade-right" data-aos-duration="1000">
-        <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-2xl md:text-4xl text-center text-gray-100 w-fit mx-auto font-Roboto">
-          My{" "}
-          <span className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700">
-            Experience
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8 flex items-center gap-3">
+          <span className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-base md:text-lg">
+            🚀
           </span>
-        </h1>
+          Experience
+        </h2>
 
-        <div className="pt-10 pb-7 grid grid-cols-1 gap-5">
+        <div className=" pb-7 grid grid-cols-1 gap-5">
           {sortByDate?.map((experience) => {
             return (
               <div
@@ -70,7 +69,7 @@ const Experience = () => {
           })}
         </div>
       </div>
-    </Container>
+    </>
   );
 };
 

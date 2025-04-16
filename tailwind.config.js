@@ -14,6 +14,12 @@ export default {
         "1300px": "1300px",
         "400px": "400px",
       },
+      colors: {
+        primary: "var(--text-primary)",
+      },
+      backgroundColor: {
+        primary: "var(--primary-bg)",
+      },
     },
   },
   plugins: [],

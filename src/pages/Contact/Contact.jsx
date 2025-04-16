@@ -1,178 +1,145 @@
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import Container from "../../components/Container/Container";
-import { BsFillTelephoneFill, BsFillSendFill } from "react-icons/bs";
-import { CiLocationArrow1 } from "react-icons/ci";
-import { MdOutlineEmail } from "react-icons/md";
-import toast, { Toaster } from "react-hot-toast";
-import { Helmet } from "react-helmet-async";
-import { BiLogoLinkedin } from "react-icons/bi";
-import { AiFillGithub, AiOutlineMessage } from "react-icons/ai";
-import { FaFacebook } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FiGithub, FiLinkedin, FiMail, FiArrowRight } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+
+const socialLinks = [
+  {
+    icon: FiGithub,
+    href: "https://github.com/sabbirhossainshanto",
+    label: "GitHub",
+    color: "text-[#2ea44f] bg-[#2ea44f]/10 hover:bg-[#2ea44f]/20",
+  },
+
+  {
+    icon: FiLinkedin,
+    href: "https://www.linkedin.com/in/sabbirshanto/",
+    label: "LinkedIn",
+    color: "text-[#0a66c2] bg-[#0a66c2]/10 hover:bg-[#0a66c2]/20",
+  },
+];
+
+const contactOptions = [
+  {
+    icon: FiMail,
+    label: "Email Me",
+    description: "Get in touch via email",
+    href: "mailto:sabbirshnt@gmail.com",
+    color: "from-purple-500 to-blue-500",
+    hoverColor: "from-purple-600 to-blue-600",
+  },
+  {
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    description: "Chat on WhatsApp",
+    href: "https://wa.me/8801777051339",
+    color: "from-green-500 to-emerald-500",
+    hoverColor: "from-green-600 to-emerald-600",
+  },
+];
 
 const Contact = () => {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    const forms = event.target;
-
-    emailjs
-      .sendForm(
-        "service_0i40m28",
-        "template_376251r",
-        form.current,
-        "9PDnV82XS60QjN1oD"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Your Message Send Successfully");
-          forms.reset();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
   return (
-    <Container>
-      <Helmet>
-        <title>Sabbir Portfolio - Contact</title>
-      </Helmet>
-
-      <div>
-        <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-3xl lg:text-4xl  text-center text-gray-100 w-fit mx-auto">
-          Contact{" "}
-          <span className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700">
-            Me
-          </span>
-        </h1>
-        <div className="bg-gray-900 px-2 py-1 rounded-md w-fit mx-auto mt-3 mb-5">
-          <h2 className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700 font-medium text-xl ">
-            Get In Touch
-          </h2>
+    <section
+      className="w-full py-20 bg-gradient-to-b from-black to-[#0a0a0a]"
+      id="contact"
+    >
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            {"Let's"} Work Together
+          </motion.h2>
+          <motion.p
+            className="text-white/60 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Have a project in mind? {"Let's"} create something amazing together.
+          </motion.p>
         </div>
 
-        <div className="md:flex justify-between py-10 space-y-12 md:space-y-0">
-          <div
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            className="w-full space-y-7"
+        <div className="max-w-3xl mx-auto">
+          {/* Contact Options */}
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="text-xl text-white text-left">
-              You can contact me at the places <br /> mentioned below. I will
-              try to <br />
-              get back to you as fast as I can.
-            </div>
-            <div className="flex items-center mt-8 gap-4">
-              <a href="https://wa.me/+8801777051339" target="main">
-                <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
-                  <img src="/src/assets/whatsapp.png" />
-                </div>
-              </a>
-
-              <a href="https://www.linkedin.com/in/sabbirshanto/" target="main">
-                <div className=" bg-[#0e76a8] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
-                  <BiLogoLinkedin color="white" size={20} />
-                </div>
-              </a>
-              <a
-                href="https://www.facebook.com/sabbirhossen.santo/"
-                target="main"
+            {contactOptions.map((option, index) => (
+              <motion.a
+                key={option.label}
+                href={option.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 rounded-2xl p-6 transition-all duration-300 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
               >
-                <div className=" bg-[#0e76a8] h-10 w-10 flex items-center justify-center rounded-full cursor-pointer">
-                  <FaFacebook color="white" size={20} />
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="w-12 h-12 bg-gradient-to-r from-white/[0.08] to-white/[0.01] rounded-xl flex items-center justify-center">
+                      <option.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <FiArrowRight className="w-5 h-5 text-white/40 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                  </div>
+                  <h3 className="text-white font-medium text-lg mb-1">
+                    {option.label}
+                  </h3>
+                  <p className="text-white/60 text-sm">{option.description}</p>
                 </div>
-              </a>
-              <a href="https://github.com/sabbirhossainshanto" target="main">
-                <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
-                  <AiFillGithub color="white" size={20} />
-                </div>
-              </a>
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${option.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                />
+              </motion.a>
+            ))}
+          </motion.div>
 
-              <a href="mailto:sabbirshnt@gmail.com">
-                <div className=" bg-[#ea4335] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
-                  <AiOutlineMessage color="white" size={20} />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            className="w-full space-y-7"
+          {/* Social Links */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center space-x-5  text-white">
-              <div className="border border-rose-600 text-rose-600 rounded-full w-10 h-10 flex justify-center items-center">
-                <BsFillTelephoneFill />
-              </div>
-              <div>
-                <h6 className="text-2xl font-semibold">Contact Me</h6>
-                <p>+8801777051339</p>
-              </div>
+            <h3 className="text-white font-medium mb-6">
+              Or Connect on Social Media
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {socialLinks.map((link, index) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${link.color}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <link.icon className="w-5 h-5" />
+                </motion.a>
+              ))}
             </div>
-            <div className="flex  items-center space-x-5  text-white">
-              <div className="border border-rose-600 text-rose-600 rounded-full w-10 h-10 flex justify-center items-center">
-                <MdOutlineEmail />
-              </div>
-              <div>
-                <h6 className="text-2xl font-semibold">Email</h6>
-                <p>sabbirshnt@gmail.com</p>
-              </div>
-            </div>
-
-            <div className="flex  items-center space-x-5  text-white">
-              <div className="border border-rose-600 text-rose-600 rounded-full w-10 h-10 flex justify-center items-center">
-                <CiLocationArrow1 />
-              </div>
-              <div>
-                <h6 className="text-2xl font-semibold">Location</h6>
-                <p>Naogoan , Bangladesh</p>
-              </div>
-            </div>
-          </div>
-          <div data-aos="fade-left" data-aos-duration="1000" className="w-full">
-            <form className="space-y-7" ref={form} onSubmit={sendEmail}>
-              <input
-                className="w-full px-3 py-2 border border-gray-600 rounded-md bg-transparent focus:outline-rose-500  bg-black text-gray-100"
-                type="text"
-                name="from_name"
-                id=""
-                placeholder="Name"
-              />
-              <input
-                className="w-full px-3 py-2 border border-gray-600 rounded-md bg-transparent focus:outline-rose-500  bg-black text-gray-100"
-                type="email"
-                name="from_email"
-                id=""
-                placeholder="Email"
-              />
-              <textarea
-                className="w-full px-3 py-2 border border-gray-600 rounded-md bg-transparent focus:outline-rose-500  bg-black text-gray-100"
-                name="message"
-                id=""
-                cols="3"
-                rows="3np"
-                placeholder="Message"
-              ></textarea>
-              <button type="submit">
-                <div className="border-2 border-rose-600 w-fit py-2 px-7 rounded-2xl text-2xl flex justify-center items-center space-x-4 hover:bg-gradient-to-r from-indigo-500 to-rose-500 hover:text-gray-100 group transition duration-300 ease-in-out ">
-                  <input
-                    type="submit"
-                    value="Send Message"
-                    className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-500 to-rose-500 font-medium group-hover:text-gray-100 transition duration-300 ease-in-out cursor-pointer"
-                  />
-                  <BsFillSendFill className="h-5 text-gray-200" />
-                </div>
-              </button>
-            </form>
-          </div>
+          </motion.div>
         </div>
       </div>
-      <Toaster />
-    </Container>
+    </section>
   );
 };
 

@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../Layout/Main";
 import About from "../pages/About/About";
 import Skills from "../pages/Skills/Skills";
 import Portfolio from "../pages/Portfolio/Portfolio";
@@ -10,11 +9,12 @@ import ProjectDetails from "../pages/ProjectDetails/ProjectDetails";
 import Experience from "../pages/Experience/Experience";
 import Blog from "../pages/Blog/Blog";
 import SingleBlog from "../pages/SingleBlog/SingleBlog";
+import App from "../App";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {

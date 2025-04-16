@@ -1,7 +1,9 @@
+import Main from "./Layout/Main";
+
 const App = () => {
   return (
-    <div>
-      
+    <div className="bg-black">
+      <Main />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Container from "../../components/Container/Container";
 import "./portfolio.css";
 import { AiOutlineGithub } from "react-icons/ai";
 import { BsFillEyeFill } from "react-icons/bs";
@@ -10,19 +9,19 @@ const Portfolio = () => {
   const { data } = useGetAllProject();
 
   return (
-    <Container>
+    <>
       <Helmet>
         <title>Sabbir Portfolio - Portfolios</title>
       </Helmet>
 
-      <h1 className="font-bold text-2xl pt-10  lg:leading-tight sm:text-2xl md:text-4xl text-center text-gray-100 w-fit mx-auto font-Roboto">
-        My{" "}
-        <span className="animate-text text-transparent bg-clip-text  bg-gradient-to-r from-indigo-700 to-rose-700">
-          Projects
+      <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8 flex items-center gap-3">
+        <span className="w-7 h-7 md:w-8 md:h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center text-base md:text-lg">
+          🚀
         </span>
-      </h1>
+        Projects
+      </h2>
 
-      <div className="pt-10 pb-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className=" pb-7 grid grid-cols-1 md:grid-cols-2 gap-6">
         {data?.data?.map((project) => {
           return (
             <div
@@ -76,7 +75,7 @@ const Portfolio = () => {
           );
         })}
       </div>
-    </Container>
+    </>
   );
 };
 

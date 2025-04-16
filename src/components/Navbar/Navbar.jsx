@@ -1,218 +1,116 @@
-import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Sidebar from "./Sidebar";
+import AnimatedLogo from "./AnimatedLogo";
+import { Link } from "react-router-dom";
 import Container from "../Container/Container";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { RxCross1 } from "react-icons/rx";
-import { useState } from "react";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollContainer = document.querySelector("[data-scroll-container]");
+      if (scrollContainer) {
+        setHasScrolled(scrollContainer.scrollTop > 50);
+      }
+    };
+
+    const scrollContainer = document.querySelector("[data-scroll-container]");
+    if (scrollContainer) {
+      scrollContainer.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (scrollContainer) {
+        scrollContainer.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
   return (
-    <div data-aos="fade-down" data-aos-duration="2000">
-      <Container>
-        <div className="hidden 800px:flex items-center justify-between  py-8 ">
-          <div className="text-[#fff] font-medium">
-            <Link to="/">
-              <h2>Sabbir</h2>
-            </Link>
-          </div>
-          <div className="flex items-center justify-center space-x-10">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `hover:bg-[#2ab0ee] px-3 py-[6px] rounded shadow-[#2ab0ee] hover:shadow-sm transition duration-300 text-[#fff] font-medium  ${
-                  isActive ? "text-rose-700 hover:text-white" : ""
-                }`
-              }
-            >
-              Home
-            </NavLink>
+    <>
+      <nav className="fixed w-full top-0 z-[100]">
+        <div
+          className={`relative transition-all duration-300 ${
+            hasScrolled
+              ? "bg-black/70 backdrop-blur-xl border-b border-white/10"
+              : "bg-black/30 backdrop-blur-md"
+          }`}
+        >
+          <Container>
+            <div className="py-4">
+              <div className="flex items-center justify-between">
+                {/* Logo */}
+                <AnimatedLogo />
 
-            <NavLink
-              to="/skills"
-              className={({ isActive }) =>
-                `hover:bg-[#f7b908] px-3 py-[6px] rounded shadow-[#f7b908] hover:shadow-sm transition duration-300 text-[#fff] font-medium  ${
-                  isActive ? "text-rose-700 hover:text-white" : ""
-                }`
-              }
-            >
-              Skill
-            </NavLink>
-
-            <NavLink
-              to="/portfolio"
-              className={({ isActive }) =>
-                `text-[#fff] font-medium hover:bg-[#e44160] px-3 py-[6px] rounded shadow-[#e44160] hover:shadow-sm transition duration-300 ${
-                  isActive ? "text-rose-700 hover:text-white" : ""
-                }`
-              }
-            >
-              Project
-            </NavLink>
-
-            {/* <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
-                  isActive ? "text-rose-700 hover:text-white" : ""
-                }`
-              }
-            >
-              About
-            </NavLink> */}
-
-            <NavLink
-              to="/experience"
-              className={({ isActive }) =>
-                ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
-                  isActive ? "text-rose-700 hover:text-white" : ""
-                }`
-              }
-            >
-              Experience
-            </NavLink>
-
-            <NavLink
-              to="/blog"
-              className={({ isActive }) =>
-                ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
-                  isActive ? "text-rose-700 hover:text-white" : ""
-                }`
-              }
-            >
-              Blog
-            </NavLink>
-
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `text-[#fff] font-medium hover:bg-[#47a148] px-3 py-[6px] rounded shadow-[#47a148] hover:shadow-sm transition duration-300 ${
-                  isActive ? "text-rose-700 hover:text-white" : ""
-                }`
-              }
-            >
-              Contact
-            </NavLink>
-          </div>
-        </div>
-        <div>
-          <div className="800px:hidden flex items-center justify-between py-6">
-            <div className="text-[#fff] font-medium">
-              <Link to="/">
-                <h2>Sabbir</h2>
-              </Link>
-            </div>
-            <div>
-              {open ? (
-                <RxCross1
-                  onClick={() => setOpen(!open)}
-                  size={25}
-                  color="#e3405f"
-                />
-              ) : (
-                <GiHamburgerMenu
-                  onClick={() => setOpen(!open)}
-                  size={25}
-                  color="#e3405f"
-                />
-              )}
-            </div>
-          </div>
-          <div>
-            {open ? (
-              <div className="w-full flex flex-col justify-center items-center space-y-2">
-                <div onClick={() => setOpen(!open)}>
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                      ` text-[#fff] font-medium hover:bg-[#2ab0ee] px-3 py-[6px] rounded shadow-[#2ab0ee] hover:shadow-sm transition duration-300 ${
-                        isActive ? "text-rose-700 hover:text-white" : ""
-                      }`
-                    }
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center gap-8">
+                  <button className="text-white/70 hover:text-white transition-all group">
+                    <div className="flex items-center gap-2">
+                      <img
+                        src="/icons/about.png"
+                        alt="About"
+                        className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
+                      />
+                      <span className="text-sm">About</span>
+                    </div>
+                  </button>
+                  <Link
+                    to="/projects"
+                    className="text-white/70 hover:text-white transition-all group"
                   >
-                    Home
-                  </NavLink>
+                    <div className="flex items-center gap-2">
+                      <img
+                        src="/icons/work.png"
+                        alt="Work"
+                        className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity"
+                      />
+                      <span className="text-sm">Project</span>
+                    </div>
+                  </Link>
+
+                  <Link to="/contact" className="group">
+                    <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-2.5 rounded-xl hover:opacity-90 transition-all flex items-center gap-2">
+                      <img
+                        src="/icons/contact.png"
+                        alt="Contact"
+                        className="w-5 h-5 opacity-90 group-hover:opacity-100 transition-opacity"
+                      />
+                      <span className="text-sm font-medium">Contact</span>
+                    </div>
+                  </Link>
                 </div>
 
-                <div onClick={() => setOpen(!open)}>
-                  <NavLink
-                    to="/skills"
-                    className={({ isActive }) =>
-                      `text-[#fff] font-medium hover:bg-[#f7b908] px-3 py-[6px] rounded shadow-[#f7b908] hover:shadow-sm transition duration-300 ${
-                        isActive ? "text-rose-700 hover:text-white" : ""
-                      }`
-                    }
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setIsMenuOpen(true)}
+                  className="md:hidden  text-white hover:opacity-80 transition-opacity"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
                   >
-                    Skill
-                  </NavLink>
-                </div>
-                <div onClick={() => setOpen(!open)}>
-                  <NavLink
-                    to="/portfolio"
-                    className={({ isActive }) =>
-                      `text-[#fff] font-medium hover:bg-[#e44160] px-3 py-[6px] rounded shadow-[#e44160] hover:shadow-sm transition duration-300 ${
-                        isActive ? "text-rose-700 hover:text-white" : ""
-                      }`
-                    }
-                  >
-                    Project
-                  </NavLink>
-                </div>
-                {/* <div onClick={() => setOpen(!open)}>
-                  <NavLink
-                    to="/about"
-                    className={({ isActive }) =>
-                      ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
-                        isActive ? "text-rose-700 hover:text-white" : ""
-                      }`
-                    }
-                  >
-                    About
-                  </NavLink>
-                </div> */}
-
-                <div onClick={() => setOpen(!open)}>
-                  <NavLink
-                    to="/experience"
-                    className={({ isActive }) =>
-                      ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
-                        isActive ? "text-rose-700 hover:text-white" : ""
-                      }`
-                    }
-                  >
-                    Experience
-                  </NavLink>
-                </div>
-                <div onClick={() => setOpen(!open)}>
-                  <NavLink
-                    to="/blog"
-                    className={({ isActive }) =>
-                      ` text-[#fff] font-medium hover:bg-[#eb6559] px-3 py-[6px] rounded shadow-[#eb6559] hover:shadow-sm transition duration-300 ${
-                        isActive ? "text-rose-700 hover:text-white" : ""
-                      }`
-                    }
-                  >
-                    Blog
-                  </NavLink>
-                </div>
-
-                <div onClick={() => setOpen(!open)}>
-                  <NavLink
-                    to="/contact"
-                    className={({ isActive }) =>
-                      `text-[#fff] font-medium hover:bg-[#47a148] px-3 py-[6px] rounded shadow-[#47a148] hover:shadow-sm transition duration-300 ${
-                        isActive ? "text-rose-700 hover:text-white" : ""
-                      }`
-                    }
-                  >
-                    Contact
-                  </NavLink>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
+                </button>
               </div>
-            ) : null}
-          </div>
+            </div>
+          </Container>
         </div>
-      </Container>
-    </div>
+      </nav>
+
+      {/* Mobile Sidebar */}
+      <Sidebar isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+    </>
   );
 };
 
