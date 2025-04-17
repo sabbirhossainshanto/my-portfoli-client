@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import {
   SiReact,
   SiTypescript,
-  SiFigma,
   SiNodedotjs,
   SiNextdotjs,
 } from "react-icons/si";
@@ -17,13 +16,7 @@ const skills = [
     bgColor: "bg-emerald-400/10",
     iconColor: "text-emerald-400",
   },
-  {
-    text: "UI/UX Designer",
-    color: "text-purple-400",
-    icon: SiFigma,
-    bgColor: "bg-purple-400/10",
-    iconColor: "text-purple-400",
-  },
+
   {
     text: "React Developer",
     color: "text-blue-400",
@@ -32,7 +25,7 @@ const skills = [
     iconColor: "text-blue-400",
   },
   {
-    text: "MERN Stack Expert",
+    text: "MERN Stack Developer",
     color: "text-green-400",
     icon: SiNodedotjs,
     bgColor: "bg-green-400/10",
@@ -46,7 +39,7 @@ const skills = [
     iconColor: "text-white",
   },
   {
-    text: "TypeScript Expert",
+    text: "TypeScript Developer",
     color: "text-blue-500",
     icon: SiTypescript,
     bgColor: "bg-blue-500/10",
