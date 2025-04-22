@@ -128,8 +128,8 @@ const Intro = () => {
             {/* Image with hover effects */}
             <div className="relative w-full h-full transition-all duration-500 group-hover:scale-105">
               <img
-                src="https:res.cloudinary.com/daar91zv4/image/upload/v1735366042/Firefly%2020230917192807-1735366041867.png"
-                alt="Kallol"
+                src="/image.png"
+                alt="Sabbir"
                 className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
                 onError={(e) => {
                   console.error("Profile image failed to load");
