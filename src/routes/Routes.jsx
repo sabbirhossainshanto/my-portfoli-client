@@ -1,6 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import About from "../pages/About/About";
-import Skills from "../pages/Skills/Skills";
 import Portfolio from "../pages/Portfolio/Portfolio";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Contact from "../pages/Contact/Contact";
@@ -10,6 +8,7 @@ import Experience from "../pages/Experience/Experience";
 import Blog from "../pages/Blog/Blog";
 import SingleBlog from "../pages/SingleBlog/SingleBlog";
 import App from "../App";
+import Container from "../components/Container/Container";
 
 const router = createBrowserRouter([
   {
@@ -21,17 +20,16 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+
       {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/skills",
-        element: <Skills />,
-      },
-      {
-        path: "/portfolio",
-        element: <Portfolio />,
+        path: "/projects",
+        element: (
+          <Container>
+            <div className="pt-10">
+              <Portfolio />
+            </div>
+          </Container>
+        ),
       },
       {
         path: "/project-details/:id",

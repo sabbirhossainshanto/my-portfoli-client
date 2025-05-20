@@ -30,9 +30,9 @@ const Portfolio = () => {
             >
               <div
                 style={{ backgroundImage: `url(${project?.image})` }}
-                className={` h-60 w-full bg-cover bg-top hover:bg-bottom duration-[5s] rounded-t-md`}
+                className={`h-60 w-full bg-cover bg-top hover:bg-bottom duration-[5s] rounded-t-md`}
               ></div>
-              <div className="h-[180px] box-border p-4">
+              <div className="h-[220px] lg:h-[180px] box-border p-4">
                 <div className="rounded-b-md pb-4">
                   <h4 className="font-bold text-2xl  pt-4 pb-2">
                     {project?.title}

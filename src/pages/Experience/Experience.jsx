@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useGetAllExperience } from "../../hooks/experience";
 import moment from "moment";
+import sevenBook from "./sevenbook.png";
 
 const Experience = () => {
   const { data } = useGetAllExperience();
@@ -8,7 +9,7 @@ const Experience = () => {
   const sortByDate = data?.data?.sort(
     (a, b) => new Date(b.joinDate) - new Date(a.joinDate)
   );
-
+  console.log(sortByDate);
   return (
     <>
       <Helmet>
@@ -23,7 +24,7 @@ const Experience = () => {
         </h2>
 
         <div className=" pb-7 grid grid-cols-1 gap-5">
-          {sortByDate?.map((experience) => {
+          {sortByDate?.map((experience, i) => {
             return (
               <div
                 key={experience?._id}
@@ -34,7 +35,7 @@ const Experience = () => {
                     <img
                       className="rounded-sm"
                       loading="lazy"
-                      src={experience?.companyPhoto}
+                      src={i === 0 ? sevenBook : experience?.companyPhoto}
                       alt="companyPhoto"
                     />
                   </div>

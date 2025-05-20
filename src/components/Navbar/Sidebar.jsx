@@ -57,7 +57,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
               {/* Navigation Links */}
               <nav className="px-6 flex flex-col gap-4">
-                <button className="group">
+                {/* <button className="group">
                   <div className="flex items-center gap-3 bg-white/[0.08] px-4 py-3 rounded-xl hover:bg-white/[0.12] transition-all duration-300">
                     <img
                       src="/icons/about.png"
@@ -68,7 +68,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                       About
                     </span>
                   </div>
-                </button>
+                </button> */}
                 <Link to="/projects" className="group" onClick={onClose}>
                   <div className="flex items-center gap-3 bg-white/[0.08] px-4 py-3 rounded-xl hover:bg-white/[0.12] transition-all duration-300">
                     <img

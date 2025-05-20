@@ -298,7 +298,7 @@ const ProjectDetails = () => {
                             to={frontendLiveLink}
                             className="flex items-center gap-2.5 rounded-full 
       px-5 py-2.5 text-base 
-      bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none 
+      bg-white/[0.08] text-white border-none 
       font-semibold transition-all duration-300 relative overflow-hidden"
                             rel="noopener noreferrer"
                             target="_blank"
@@ -343,7 +343,7 @@ const ProjectDetails = () => {
                             to={frontendGithubLink}
                             className="flex items-center gap-2.5 rounded-full 
       px-5 py-2.5 text-base 
-      bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none 
+     bg-white/[0.08] text-white border-none 
       font-semibold transition-all duration-300 relative overflow-hidden"
                           >
                             <div
@@ -387,7 +387,7 @@ const ProjectDetails = () => {
                           <Link
                             className="flex items-center gap-2.5 rounded-full 
       px-5 py-2.5 text-base 
-      bg-gradient-to-r from-amber-500 to-orange-500 text-white border-none 
+      bg-white/[0.08] text-white border-none 
       font-semibold transition-all duration-300 relative overflow-hidden"
                             target="_blank"
                             to={backendGithubLink}

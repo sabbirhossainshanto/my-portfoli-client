@@ -12,14 +12,22 @@ import {
   SiExpress,
   SiMongodb,
   SiMysql,
-  SiFirebase,
   SiGit,
   SiDocker,
   SiFigma,
-  SiAdobexd,
-  SiAdobephotoshop,
   SiJavascript,
+  SiPrisma,
+  SiMongoose,
+  SiVitest,
+  SiPostman,
+  SiNetlify,
 } from "react-icons/si";
+
+import { GrGraphQl } from "react-icons/gr";
+import { IoLibrary, IoLogoVercel } from "react-icons/io5";
+import { FaBitbucket, FaDatabase } from "react-icons/fa";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { VscCode } from "react-icons/vsc";
 
 const Skills = () => {
   // const { data } = useGetAllSkill();
@@ -31,8 +39,8 @@ const Skills = () => {
     { name: "Next.js", icon: SiNextdotjs },
     { name: "TypeScript", icon: SiTypescript },
     { name: "Tailwind CSS", icon: SiTailwindcss },
-    // { name: "Hero UI", icon: "/icon/heroui.svg" },
-    // { name: "Shadcn Ui", icon: "/icon/shadcn.png" },
+    { name: "Hero UI", icon: SiTailwindcss },
+    { name: "Shadcn Ui", icon: IoLibrary },
     { name: "Material UI", icon: SiMui },
   ];
 
@@ -40,17 +48,25 @@ const Skills = () => {
     { name: "Node.js", icon: SiNodedotjs },
     { name: "Express", icon: SiExpress },
     { name: "MongoDB", icon: SiMongodb },
-    { name: "MySQL", icon: SiMysql },
-    { name: "Firebase", icon: SiFirebase },
+    { name: "Mongoose", icon: SiMongoose },
+    { name: "SQL", icon: SiMysql },
+    { name: "PostgreSQL", icon: BiLogoPostgresql },
+    { name: "Prisma", icon: SiPrisma },
+    { name: "DBMS", icon: FaDatabase },
+    { name: "GraphQL", icon: GrGraphQl },
     { name: "REST API", icon: SiNodedotjs },
   ];
 
   const toolsSkills = [
     { name: "Git", icon: SiGit },
     { name: "Docker", icon: SiDocker },
+    { name: "Vitest", icon: SiVitest },
     { name: "Figma", icon: SiFigma },
-    { name: "Adobe XD", icon: SiAdobexd },
-    { name: "Photoshop", icon: SiAdobephotoshop },
+    { name: "Postman", icon: SiPostman },
+    { name: "VS Code", icon: VscCode },
+    { name: "Bitbucket", icon: FaBitbucket },
+    { name: "Vercel", icon: IoLogoVercel },
+    { name: "Netlify", icon: SiNetlify },
   ];
 
   const itemVariants = {
@@ -75,9 +91,9 @@ const Skills = () => {
           </span>
           Skills
         </h2>
-        <div className="flex flex-col lg:flex-row items-center gap-4">
+        <div className="flex flex-col lg:flex-row items-baseline gap-4 lg:h-[270px]">
           <motion.div
-            className="bg-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-colors"
+            className="bg-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-colors w-full h-full"
             whileHover={{ y: -5 }}
           >
             <h3 className="text-lg md:text-xl font-medium text-white mb-3 md:mb-4">
@@ -107,7 +123,7 @@ const Skills = () => {
           </motion.div>
 
           <motion.div
-            className="bg-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-colors"
+            className="bg-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-colors w-full h-full"
             whileHover={{ y: -5 }}
           >
             <h3 className="text-lg md:text-xl font-medium text-white mb-3 md:mb-4">
@@ -128,7 +144,7 @@ const Skills = () => {
           </motion.div>
 
           <motion.div
-            className="bg-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-colors"
+            className="bg-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-colors w-full h-full"
             whileHover={{ y: -5 }}
           >
             <h3 className="text-lg md:text-xl font-medium text-white mb-3 md:mb-4">

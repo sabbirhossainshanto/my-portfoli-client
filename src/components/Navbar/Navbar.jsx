@@ -46,7 +46,7 @@ const Navbar = () => {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-8">
-                  <button className="text-white/70 hover:text-white transition-all group">
+                  {/* <button className="text-white/70 hover:text-white transition-all group">
                     <div className="flex items-center gap-2">
                       <img
                         src="/icons/about.png"
@@ -55,7 +55,7 @@ const Navbar = () => {
                       />
                       <span className="text-sm">About</span>
                     </div>
-                  </button>
+                  </button> */}
                   <Link
                     to="/projects"
                     className="text-white/70 hover:text-white transition-all group"
