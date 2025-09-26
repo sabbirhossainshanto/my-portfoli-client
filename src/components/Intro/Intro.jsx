@@ -10,21 +10,15 @@ import "aos/dist/aos.css";
 import WavingHand from "./WavingHand";
 import TechSlider from "./TechSlider";
 import { Link } from "react-router-dom";
+import { CodeProfile } from "./CodeProfile";
 AOS.init();
 
 const Intro = () => {
-  // const handleDownload = () => {
-  //   const url = "/resume.pdf";
-  //   const anchor = document.createElement("a");
-  //   anchor.href = url;
-  //   anchor.download = "./resume.pdf";
-  //   anchor.click();
-  // };
   return (
     <div className="pt-28 pb-12">
       <div className="flex flex-col lg:flex-row gap-8 min-h-[600px]">
         {/* Left Card - Content */}
-        <div className="lg:w-[60%] relative group order-2 lg:order-1">
+        <div className="lg:w-[60%] relative group order-1 lg:order-1">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50"></div>
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-8 border border-white/10 relative h-full hover:border-white/20 transition-colors duration-500">
             {/* Greeting Section */}
@@ -87,26 +81,26 @@ const Intro = () => {
             </div>
             {/* Social Links */}
             <div className="flex items-center mt-8 gap-4">
-              <a href="https:wa.me/+8801777051339" target="main">
+              <a href="https://wa.me/+8801777051339" target="main">
                 <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
                   <img src={whatsApp} />
                 </div>
               </a>
 
-              <a href="https:www.linkedin.com/in/sabbirshanto/" target="main">
+              <a href="https://www.linkedin.com/in/sabbirshanto/" target="main">
                 <div className=" bg-[#0e76a8] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
                   <BiLogoLinkedin color="white" size={20} />
                 </div>
               </a>
               <a
-                href="https:www.facebook.com/sabbirhossen.santo/"
+                href="https://www.facebook.com/sabbirhossen.santo/"
                 target="main"
               >
                 <div className=" bg-[#0e76a8] h-10 w-10 flex items-center justify-center rounded-full cursor-pointer">
                   <FaFacebook color="white" size={20} />
                 </div>
               </a>
-              <a href="https:github.com/sabbirhossainshanto" target="main">
+              <a href="https://github.com/sabbirhossainshanto" target="main">
                 <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
                   <AiFillGithub color="white" size={20} />
                 </div>
@@ -122,15 +116,15 @@ const Intro = () => {
         </div>
 
         {/* Right Card - Image */}
-        <div className="lg:w-[40%] relative group h-full order-1 lg:order-2">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50"></div>
+        <div className="lg:w-[40%] relative group h-full order-2 lg:order-2">
+          <CodeProfile />
+
           <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden relative hover:border-white/20 transition-colors duration-500 h-full">
-            {/* Image with hover effects */}
             <div className="relative w-full h-full transition-all duration-500 group-hover:scale-105">
               <img
-                src="/image.png"
+                src="/image3.png"
                 alt="Sabbir"
-                className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
+                className="w-full h-[250px] object-cover transition-all duration-500  object-top"
                 onError={(e) => {
                   console.error("Profile image failed to load");
                   const target = e.target;
@@ -138,7 +132,6 @@ const Intro = () => {
                 }}
               />
 
-              {/* Gradient overlay for better contrast */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent opacity-40 group-hover:opacity-30 transition-opacity duration-500"></div>
             </div>
           </div>

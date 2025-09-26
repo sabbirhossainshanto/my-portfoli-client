@@ -96,14 +96,14 @@ const Sidebar = ({ isOpen, onClose }) => {
               {/* Social Links */}
               <div className="mt-auto p-6 border-t border-white/10">
                 <div className="flex items-center mt-8 gap-4">
-                  <a href="https:wa.me/+8801777051339" target="main">
+                  <a href="https://wa.me/+8801777051339" target="main">
                     <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
                       <img src={whatsApp} />
                     </div>
                   </a>
 
                   <a
-                    href="https:www.linkedin.com/in/sabbirshanto/"
+                    href="https://www.linkedin.com/in/sabbirshanto/"
                     target="main"
                   >
                     <div className=" bg-[#0e76a8] h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
@@ -111,14 +111,17 @@ const Sidebar = ({ isOpen, onClose }) => {
                     </div>
                   </a>
                   <a
-                    href="https:www.facebook.com/sabbirhossen.santo/"
+                    href="https://www.facebook.com/sabbirhossen.santo/"
                     target="main"
                   >
                     <div className=" bg-[#0e76a8] h-10 w-10 flex items-center justify-center rounded-full cursor-pointer">
                       <FaFacebook color="white" size={20} />
                     </div>
                   </a>
-                  <a href="https:github.com/sabbirhossainshanto" target="main">
+                  <a
+                    href="https://github.com/sabbirhossainshanto"
+                    target="main"
+                  >
                     <div className="bg-gray-700 h-10 w-10  flex items-center justify-center rounded-full cursor-pointer">
                       <AiFillGithub color="white" size={20} />
                     </div>

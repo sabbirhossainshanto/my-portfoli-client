@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         path: "/projects",
         element: (
           <Container>
-            <div className="pt-10">
+            <div className="pt-32">
               <Portfolio />
             </div>
           </Container>

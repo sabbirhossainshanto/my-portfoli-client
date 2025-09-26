@@ -40,7 +40,7 @@ const contactOptions = [
 const Contact = () => {
   return (
     <section
-      className="w-full py-20 bg-gradient-to-b from-black to-[#0a0a0a]"
+      className="w-full h-full min-h-screen flex flex-col justify-center items-center  bg-gradient-to-b from-black to-[#0a0a0a] pt-24 pb-5"
       id="contact"
     >
       <div className="container mx-auto px-4">
